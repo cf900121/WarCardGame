@@ -24,6 +24,7 @@ namespace WarCardGame
             Console.WriteLine("Welcome to War");
             Console.Write("Enter your name: ");
             name = Console.ReadLine();
+            Console.WriteLine(" ");
 
             //begin game
             play();
@@ -42,7 +43,9 @@ namespace WarCardGame
             hand1 = new Hand(deck, 0, 26);
             hand2 = new Hand(deck, 26, 26);
 
-            Console.WriteLine(hand1.getLength() + "|" + name + "| -->  |  <-- |BOT|" + hand2.getLength());
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine(hand1.getLength() + "|" + name + "| -->             |             <-- |BOT|" + hand2.getLength());
+            Console.WriteLine("------------------------------------------------------");
 
             //Loop gameplay until one of the hands is empty
             while (hand1.Hand26.Any() && hand2.Hand26.Any())
@@ -95,7 +98,7 @@ namespace WarCardGame
                 //increases the flipped card index again in case of another war
                 index += 2;
 
-                Console.WriteLine("\n          -------------WAR-------------");
+                Console.WriteLine("\n            -------------WAR-------------");
                 showMove();
 
                 //sets flipped card to the new index
@@ -145,9 +148,9 @@ namespace WarCardGame
 
         public static void showMove()
         {
-            Console.WriteLine("-------------------------------------------------");
+            Console.WriteLine("------------------------------------------------------");
             Console.WriteLine(hand1.getLength() + "|" + name + "| --> " + playerCard + " | " + botCard + " <-- |BOT|" + hand2.getLength());
-            Console.WriteLine("-------------------------------------------------");
+            Console.WriteLine("------------------------------------------------------");
         }
 
     }
